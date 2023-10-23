@@ -82,7 +82,7 @@ echo ''.'<br>';
 // Formatting numbers
 echo"Formatting numbers".'<br>';
 $number = 1234567.890;
-echo number_format($number,);
+echo number_format($number);
 echo ''.'<br>';
 echo ''.'<br>';
 
