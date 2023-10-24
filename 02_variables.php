@@ -32,7 +32,7 @@ echo ".............".'<br>';
 
 // Print types of the variables
 
-echo "Print types of the variables";
+echo "Print types of the variables".'<br>';
 echo gettype($name).'<br>';
 echo gettype($age).'<br>';
 echo gettype($isFemale).'<br>';
