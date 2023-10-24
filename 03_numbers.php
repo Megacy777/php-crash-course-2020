@@ -34,15 +34,15 @@ echo ''.'<br>';
 
 // Increment operator
 echo"Increment operator".'<br>';
-$a++;
-++$a;
+echo $a++.'<br>';
+echo ++$a;
 echo ''.'<br>';
 
 
 // Decrement operator
 echo"Decrement operator".'<br>';
-$b--;
---$b;
+echo $b--.'<br>';
+echo --$b;
 echo ''.'<br>';
 
 
