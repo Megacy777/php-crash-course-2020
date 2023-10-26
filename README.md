@@ -7,6 +7,7 @@ If you are interested to see final files switch to [final-version](https://githu
 This repo covers all the basic things about PHP. 
 YouTube : https://www.youtube.com/watch?v=yXzWfZ4N4xU
 
+Module 1:
  - Comments
  - Variables
  - Numbers
@@ -16,6 +17,8 @@ YouTube : https://www.youtube.com/watch?v=yXzWfZ4N4xU
  - Loops
  - Functions
  - Dates
+  
+Module 2:
  - Including PHP files
  - Working with File System
  - Object Oriented PHP (OOP)
