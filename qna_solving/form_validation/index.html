@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Username and Password Validation</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <div id="message"></div>
+    <form id="registrationForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" />
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" />
+        <br><br>
+        <button type="button" id="register">Register</button>
+    </form>
+    <script>
+        document.getElementById("register").addEventListener("click", function() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Validate username and password on the client side
+            if (validateUsername(username) && validatePassword(password)) {
+                // Make an Ajax request to the server
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "validate.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        document.getElementById("message").innerHTML = response.message;
+                    }
+                };
+
+                const data = `username=${username}&password=${password}`;
+                xhr.send(data);
+            } else {
+                document.getElementById("message").innerHTML = "Invalid username or password format.";
+            }
+        });
+
+        function validateUsername(username) {
+            // Implement your username validation rules here (e.g., length, special characters)
+            // Return true if the username is valid, false otherwise
+            // Example: Username must be at least 4 characters long and can contain letters, numbers, and underscores.
+            const usernameRegex = /^[a-zA-Z0-9_]{4,}$/;
+            return usernameRegex.test(username);
+        }
+
+        function validatePassword(password) {
+            // Implement your password validation rules here (e.g., length, special characters)
+            // Return true if the password is valid, false otherwise
+            // Example: Password must be at least 8 characters long and contain at least one special character.
+            const passwordRegex = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+            return passwordRegex.test(password);
+        }
+    </script>
+</body>
+</html>
