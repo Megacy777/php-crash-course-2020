@@ -28,3 +28,6 @@ Module 2:
     - File uploading and file validation
     - Working with mysql
  - Composer and autoloading
+
+Module 3: 
+- question solving
