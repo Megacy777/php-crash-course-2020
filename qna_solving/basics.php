@@ -87,4 +87,3 @@ foreach ($uniqueArray as $element) {
     echo "$element ";
 }
 ?>
-
