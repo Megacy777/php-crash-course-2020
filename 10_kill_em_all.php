@@ -1,4 +1,4 @@
-<?php // PHP code must be enclosed with <?php tags
+<?php // PHP code must be enclosed with <?php  tags
 
 // If your php file only contains PHP code, it is best practice
 // to omit the php closing tag to prevent accidental output.
@@ -21,6 +21,7 @@ echo "World\n"; // Prints "World" with a line break
 
 // Anything outside <?php tags is echoed automatically
 ?>
+
 Hello World Again!
 <?php
 // That is because historically PHP started as a Template engine
