@@ -27,7 +27,7 @@ Module 2:
     - Working with forms
     - File uploading and file validation
     - Working with mysql
- - Composer and autoloading
+ - Composer and auto-loading
 
 Module 3: 
 - question solving
