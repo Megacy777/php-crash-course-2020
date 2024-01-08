@@ -93,7 +93,13 @@ $d2 = ceil(($d1 - time()) / 60 / 60 / 24);
 echo 'There are ' . $d2 . ' days until Mapinduzi ya Zanzibar.'.'<br><br>';
 
 
-
+// *TO DOs : 
+// Date time class 
+// Immutable DateTime 
+// Time Zone -- UTC/GMT 
+//    1. FORMAT 
+//    2. String -> Date 
+//    3. Date Operations
 
 
 

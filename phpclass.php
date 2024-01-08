@@ -10,7 +10,7 @@ class Fruit {
     }
     function get_name() {
       return $this->name;
-
+    }
     function set_color($color) {
         $this->color = $color;
     }
@@ -33,13 +33,6 @@ echo "<br><br>";
 echo $banana->get_name();
 echo $banana->get_color();
 ?>
-
-
-
-
-
-
-
 
 
 
