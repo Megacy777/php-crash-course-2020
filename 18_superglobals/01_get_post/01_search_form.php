@@ -1,5 +1,15 @@
 <?php
 
+/* 
+    * POST - to create a resource
+    * PATCH - to update a resource
+    * PUT - to replace a resource
+    * GET - to get a resource or a list of resources
+    * DELETE - to delete a resource
+
+*/
+
+
 echo '<pre>';
 var_dump($_GET);
 echo '</pre>';
