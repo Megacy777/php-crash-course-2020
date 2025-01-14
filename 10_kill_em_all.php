@@ -98,7 +98,7 @@ $heredoc = <<<END
 Multi line
 $sgl_quotes
 END;
-
+ 
 // String concatenation is done with .
 echo 'This string ' . 'is concatenated';  // Returns 'This string is concatenated'
 
@@ -245,7 +245,21 @@ $string = 'one';
 echo $string + $string; // => 0
 // Outputs 0 because the + operator cannot cast the string 'one' to a number
 
+echo $string . $string; // Concat and Outputs: oneone
+
 // Type casting can be used to treat a variable as another type
+$var = "123.45";
+$intVar = (int) $var; // Converts to integer
+echo $intVar; // Output: 123
+
+$var = 123.45;
+$stringVar = (string) $var; // Converts to string
+echo $stringVar; // Output: "123.45"
+
+$var = "hello";
+$arrayVar = (array) $var; // Converts to array
+print_r($arrayVar);
+// Output: Array ( [0] => hello )\\.
 
 $boolean = (boolean) 1; // => true
 
@@ -317,12 +331,16 @@ This is displayed otherwise.
 <?php
 
 // Use switch to save some logic.
+$x = 'two'; 
 switch ($x) {
     case '0':
         print 'Switch does type coercion';
         break; // You must include a break, or you will fall through
                // to cases 'two' and 'three'
     case 'two':
+        print(12 + 43);
+        print '<br> Nothing much jus checks over strips';
+
     case 'three':
         // Do something if $variable is either 'two' or 'three'
         break;
@@ -338,7 +356,7 @@ while ($i < 5) {
 
 echo "\n";
 
-$i = 0;
+$i = 0; 
 do {
     echo $i++;
 } while ($i < 5); // Prints "01234"
@@ -441,15 +459,15 @@ echo $function_name(1, 2); // => 3
 function parameters() {
     $numargs = func_num_args();
     if ($numargs > 0) {
-        echo func_get_arg(0) . ' | ';
+        echo func_get_arg(0) . ' | <br>';
     }
     $args_array = func_get_args();
     foreach ($args_array as $key => $arg) {
-        echo $key . ' - ' . $arg . ' | ';
+        echo $key . ' - ' . $arg . ' | <br>';
     }
 }
 
-parameters('Hello', 'World'); // Hello | 0 - Hello | 1 - World |
+parameters('Hello', 'World', 'Massawe'); // Hello | 0 - Hello | 1 - World | 2 - Massawe |
 
 // Since PHP 5.6 you can get a variable number of arguments
 function variable($word, ...$list) {
@@ -529,6 +547,13 @@ class MyClass
         $this->instanceProp = $instanceProp;
     }
 
+    // opposite to __construct()
+    // called when object is no longer referenced
+    public function __destruct()
+    {
+        print "Destroying";
+    }
+
     // Methods are declared as functions inside a class
     public function myMethod()
     {
@@ -538,6 +563,7 @@ class MyClass
     // final keyword would make a function unoverridable
     final function youCannotOverrideMe()
     {
+        print 'This function cannot be overridden';
     }
 
     // Magic Methods
@@ -546,13 +572,6 @@ class MyClass
     public function __toString()
     {
         return $property;
-    }
-
-    // opposite to __construct()
-    // called when object is no longer referenced
-    public function __destruct()
-    {
-        print "Destroying";
     }
 
 /*
