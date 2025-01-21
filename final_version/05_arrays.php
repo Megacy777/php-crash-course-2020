@@ -79,7 +79,7 @@ echo '</pre>';
 // Associative arrays
 // ============================================
 
-// Create an associative array
+// Create an associative array 
 $person = [
     'name' => 'Brad',
     'surname' => 'Traversy',
