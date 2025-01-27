@@ -1,6 +1,5 @@
 <?php
 require_once 'lib/vendor/setasign/fpdf/fpdf.php';
-// 19_library/fpdf_project/lib/vendor/setasign/fpdf/fpdf.php
 
 // Create a new PDF instance
 $pdf = new FPDF();
@@ -11,7 +10,8 @@ $pdf->SetFont('Arial', 'B', 16);
 $pdf->Cell(0, 10, 'Hello, FPDF World!', 0, 1, 'C');
 
 // Add an image (logo)
-$pdf->Image('assets/logo.png', 10, 10, 30);
+// function Image($file, $x=null, $y=null, $w=0, $h=0, $type='', $link='')
+$pdf->Image('assets/logo.png', 10, 100, 150);
 
 // Add a multiline description
 $pdf->Ln(20); // Add vertical spacing
